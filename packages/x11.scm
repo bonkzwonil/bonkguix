@@ -1,0 +1,90 @@
+(define-module (libx11))
+(use-modules (gnu packages package-management))
+  #:use-module (guix gexp)
+  #:use-module ((guix licenses) #:prefix license:)
+  #:use-module (guix packages)
+  #:use-module (guix download)
+  #:use-module (guix git-download)
+  #:use-module (guix build-system copy)
+  #:use-module (guix build-system gnu)
+  #:use-module (guix build-system meson)
+  #:use-module (guix build-system perl)
+  #:use-module (guix build-system python)
+  #:use-module (guix utils)
+  #:use-module (gnu packages)
+  #:use-module (gnu packages aidc)
+  #:use-module (gnu packages anthy)
+  #:use-module (gnu packages autotools)
+  #:use-module (gnu packages base)
+  #:use-module (gnu packages bash)
+  #:use-module (gnu packages bison)
+  #:use-module (gnu packages check)
+  #:use-module (gnu packages compression)
+  #:use-module (gnu packages emacs)
+  #:use-module (gnu packages flex)
+  #:use-module (gnu packages fonts)
+  #:use-module (gnu packages fontutils)
+  #:use-module (gnu packages freedesktop)
+  #:use-module (gnu packages gettext)
+  #:use-module (gnu packages gl)
+  #:use-module (gnu packages glib)
+  #:use-module (gnu packages gnupg)
+  #:use-module (gnu packages gperf)
+  #:use-module (gnu packages gtk)
+  #:use-module (gnu packages haskell-xyz)
+  #:use-module (gnu packages inkscape)
+  #:use-module (gnu packages image)
+  #:use-module (gnu packages imagemagick)
+  #:use-module (gnu packages libedit)
+  #:use-module (gnu packages linux)
+  #:use-module (gnu packages llvm)
+  #:use-module (gnu packages m4)
+  #:use-module (gnu packages ncurses)
+  #:use-module (gnu packages onc-rpc)
+  #:use-module (gnu packages pciutils)
+  #:use-module (gnu packages perl)
+  #:use-module (gnu packages perl-check)
+  #:use-module (gnu packages pkg-config)
+  #:use-module (gnu packages python)
+  #:use-module (gnu packages python-compression)
+  #:use-module (gnu packages python-crypto)
+  #:use-module (gnu packages python-xyz)
+  #:use-module (gnu packages qt)
+  #:use-module (gnu packages spice)
+  #:use-module (gnu packages video)
+  #:use-module (gnu packages xiph)
+  #:use-module (gnu packages xml)
+  #:use-module (gnu packages xdisorg))
+
+(define-public libx11-1.6
+  (package
+    (name "libx11")
+    (version "1.6.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (string-append "https://xorg.freedesktop.org/archive/"
+                           "/individual/lib/libX11-" version ".tar.xz"))
+       (sha256
+        (base32
+         "1xyry8i7zqmlkvpbyyqwi18rrdw6ycczlvfp63rh2570pfhimi0v"))))
+    (build-system gnu-build-system)
+    (outputs '("out"
+               "doc"))                  ;8 MiB of man pages + XML
+    (arguments
+     `(#:configure-flags
+       (list (string-append "--mandir="
+                            (assoc-ref %outputs "doc")
+                            "/share/man")
+             "--disable-static"
+             ,@(malloc0-flags))))
+    (propagated-inputs
+     (list xorgproto libxcb))
+    (inputs
+     (list xtrans))
+    (native-inputs
+     (list pkg-config xorgproto))
+    (home-page "https://www.x.org/wiki/")
+    (synopsis "Xorg Core X11 protocol client library")
+    (description "Xorg Core X11 protocol client library.")
+    (license license:x11)))
