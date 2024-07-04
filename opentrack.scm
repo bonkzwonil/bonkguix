@@ -1,4 +1,4 @@
-(define-module (gnu packages nvidia-texture-tools)
+(define-module (opentrack)
   #:use-module (gnu packages)
   #:use-module (guix packages)
   #:use-module (guix gexp)
@@ -92,4 +92,3 @@
     (license license:isc)))
 
 
-opentrack
