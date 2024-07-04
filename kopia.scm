@@ -1,4 +1,4 @@
-(define-module (gnu packages sync)
+(define-module (kopia)
   #:use-module ((guix licenses) #:prefix license:)
   #:use-module (guix build-system cmake)
   #:use-module (guix build-system copy)
