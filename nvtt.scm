@@ -1,4 +1,4 @@
-(define-module (nvidia-texture-tools)
+(define-module (nvtt)
   #:use-module (gnu packages)
   #:use-module (guix packages)
   #:use-module (guix gexp)
