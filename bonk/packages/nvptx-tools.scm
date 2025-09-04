@@ -43,4 +43,6 @@
    (synopsis "Tools for NVPTX GCC toolchains")
    (description "Assembler and linker for NVPTX.")
    (home-page "https://github.com/SourceryTools/nvptx-tools")
-   (license gpl3+)))
+   (license license:gpl3+)))
+
+nvptx-tools

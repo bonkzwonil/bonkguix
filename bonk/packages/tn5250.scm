@@ -77,3 +77,6 @@
     (description "tn5250")
     (home-page "https://github.com/tn5250/tn5250")
     (license license:lgpl2.1)))
+
+
+tn5250
