@@ -17,6 +17,8 @@ jobs:
     - name: Install guix (We dont need full SD, just the ability to build packages is fine)
       run: sudo apt install guix
 
+    - name: Start guix
+      run: sudo systemctl start gnu-store && sudo systemctl start guix-daemon
 
     - name: Build packages
       run: make packages
