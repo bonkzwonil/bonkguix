@@ -1,4 +1,4 @@
-(define-module (x3270)
+(define-module (packages x3270)
   #:use-module (gnu packages)
   #:use-module (guix packages)
   #:use-module (guix gexp)
