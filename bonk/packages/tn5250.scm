@@ -1,4 +1,4 @@
-(define-module (packages tn5250)
+(define-module (bonk packages tn5250)
   #:use-module ((guix licenses) #:prefix license:)
   #:use-module (guix build-system cmake)
   #:use-module (guix build-system copy)
