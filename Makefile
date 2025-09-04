@@ -9,4 +9,9 @@ nvptx-tools:
 tn5250:
 	guix build -L packages tn5250
 
-packages: x3270 nvptx-tools tn5250
+nomad-hc:
+	guix build -L . nomad-hc
+
+
+
+packages: x3270 nvptx-tools tn5250 nomad-hc

@@ -18,7 +18,7 @@ jobs:
       run: sudo apt install guix
 
     - name: Start guix
-      run: sudo systemctl start gnu-store && sudo systemctl start guix-daemon
+      run: sudo systemctl start guix-daemon
 
     - name: Build packages
       run: make packages
