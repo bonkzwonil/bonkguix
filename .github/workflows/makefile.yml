@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install guix (We dont need full SD, just the ability to build packages is fine)
+      run: sudo apt install guix
+
+    - name: Build packages
+      run: make packages
+
+    
