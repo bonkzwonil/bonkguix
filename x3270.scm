@@ -5,7 +5,7 @@
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages image-processing)
   #:use-module (gnu packages linux)
-	#:use-module (gnu packages readline)
+        #:use-module (gnu packages readline)
   #:use-module (guix download)
   #:use-module (guix git-download)
   #:use-module (guix packages)
@@ -30,39 +30,39 @@
     (source (origin
               (method url-fetch)
               (uri (string-append
-										"https://prdownloads.sourceforge.net/x3270/suite3270-"
-										version
-										"-src.tgz"))
+                                                                                "https://prdownloads.sourceforge.net/x3270/suite3270-"
+                                                                                version
+                                                                                "-src.tgz"))
               (sha256
                (base32
                 "1cadrrrjdbxaxfsdx2xkji8dhmxir99z2pxkm9nqj3d455xx4134"))))
     (build-system gnu-build-system)
 
-		(arguments
+                (arguments
      `(#:configure-flags
        (list)
-			 #:tests? #f))
-	
+                         #:tests? #f))
+
     (native-inputs
      (list
-			pkg-config
-			readline
-			tcl
-			expat
-			m4
-			openssl
-			libx11
-			libice
-			libxft
-			libxt
-			libxcursor
-			libxext
-			libxaw
-			bdftopcf
-			mkfontdir
-			))
-			 
-		 
+                        pkg-config
+                        readline
+                        tcl
+                        expat
+                        m4
+                        openssl
+                        libx11
+                        libice
+                        libxft
+                        libxt
+                        libxcursor
+                        libxext
+                        libxaw
+                        bdftopcf
+                        mkfontdir
+                        ))
+
+
     (synopsis "IBM 3270 Terminal emulator")
     (description "Emulators for the 3270 Terminal. x3270, c3270, t3270 etc")
     (home-page "https://x3270.miraheze.org")
@@ -70,3 +70,4 @@
 
 
 
+x3270
