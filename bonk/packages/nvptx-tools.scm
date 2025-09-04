@@ -44,5 +44,3 @@
    (description "Assembler and linker for NVPTX.")
    (home-page "https://github.com/SourceryTools/nvptx-tools")
    (license license:gpl3+)))
-
-nvptx-tools
